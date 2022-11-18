@@ -6,7 +6,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of my.project is to … perform three functions
+The goal of my.project is to perform three functions. 
 
 ## Installation
 
@@ -18,38 +18,35 @@ You can install the development version of my.project from
 devtools::install_github("jaceywebber/Webber_pkg")
 ```
 
-## Example
 
-This is a basic example which shows you how to solve a common problem:
+Packages that you will need:
 
 ``` r
 library(my.project)
-## basic example code
+library(tidyverse)
+library(ggplot2)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+First Function: cleaning_data:
+This function will remove all NA values from the data. 
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+cleaning_data("Data/surveys.csv")
+```
+Second Function: create_plot: 
+This function will create a jitter plot from our data with sex on the x- axis and weight on the y-axis.  
+
+``` r
+create_plot("Data/surveys.csv")
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
+Third function: linear_model
+This function will generate a linear model and summary from our data with hindfoot_length as the response and weight as the predictor. 
 
-You can also embed plots, for example:
+``` r
+linear_model("Data/surveys.csv")
+```
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+
+
