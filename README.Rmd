@@ -1,0 +1,64 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# my.project
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of my.project is to perform three functions. 
+
+## Installation
+
+You can install the development version of my.project from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("jaceywebber/Webber_pkg")
+```
+
+Packages that you will need: 
+
+```{r example}
+library(my.project)
+library(tidyverse)
+library(ggplot2)
+```
+
+First function: cleaning_data: 
+This function will remove all NA values from the data. 
+
+
+```{r}
+cleaning_data("Data/surveys.csv")
+```
+
+
+Second function: create_plot
+This function will create a jitter plot from the data with the sex on the x-axis, weight on the y-axis, and categorized sex by color. 
+
+```{r}
+create_plot("Data/surveys.csv")
+```
+Third function: linear_model
+This function will generate a linear model and summary from the data with hindfoot_length as the response and weight as the predictor. 
+
+```{r}
+linear_model("Data/surveys.csv")
+```
+
+
+You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>.
+
